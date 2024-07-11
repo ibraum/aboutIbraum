@@ -1,0 +1,691 @@
+@font-face {
+    font-family: tall;
+    src: url(asset/font/Impact.ttf);
+}
+
+@font-face {
+    font-family: jos;
+    src: url(asset/font/JosefinSans-Light.ttf);
+}
+
+@font-face {
+    font-family: josr;
+    src: url(asset/font/JosefinSans-Regular.ttf);
+}
+
+:root{
+    --bg-color-var: #2D2C2C;
+    --bg-trans-color-var: #2d2c2c00;
+    --color-primary-var: #D9D9D9;
+    --color-secondary-var: #F6A74B;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: var(--bg-color-var);
+}
+
+::-webkit-scrollbar{
+    width: 3px;
+    height: 50px;
+    background: linear-gradient(0deg, var(--color-primary-var), var(--color-secondary-var));
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: tall;
+    /* outline: 1px solid red; */
+    color: var(--color-primary-var);
+}
+
+body{
+    background-color: var(--bg-color-var);
+    /* padding: 20px; */
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    border-radius: 10px;
+    /* overflow: hidden; */
+}
+
+@media  screen and (min-width: 1000px) {
+    #logo{
+        position: fixed;
+        top: 10px;
+        left: 25px;
+        z-index: 1000;
+        font-size: 1.2rem;
+        display: flex;
+        align-items: end;
+        justify-content: start;
+    }
+
+    #logo div{
+        width: 50px;
+        white-space: nowrap;
+    }
+    
+    main{
+        border-radius: 10px;
+    }
+    
+    .screen{
+        position: absolute;
+        width: calc(100%);
+        height: calc(100%);
+        backdrop-filter: blur(200px);
+        z-index: 0;
+        border-radius: 10px;
+    }
+    
+    .light-white{
+        width: 400px;
+        height: 400px;
+        background-color: var(--color-secondary-var);
+        border-radius: 50%;
+        position: absolute;
+        right: 50px;
+        top: 50px;
+        z-index: -50;
+        animation: light-white 12s ease-in 10s infinite;
+    }
+    
+    @keyframes light-white {
+        0%{
+            top: 50px;
+        }
+        25%{
+            top: 100px;
+        }
+        50%{
+            top: 110px;
+        }
+        75%{
+            top: 100px;
+        }
+        100%{
+            top: 50px;
+        }
+    }
+    
+    .light-yellow{
+        width: 400px;
+        height: 400px;
+        background-color: var(--color-primary-var);
+        border-radius: 50%;
+        position: absolute;
+        left: 50px;
+        bottom: 50px;
+        z-index: -50;
+    }
+    
+    header{
+        width: 100%;
+        height: 50px;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+    }
+    
+.header-div{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    position: absolute;
+    width: 500px;
+    top: 0px;
+    right: 0px;
+    z-index: 1000;
+    }
+
+    .header-div ul{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding-right: 75px;
+        list-style: none;
+        }
+
+        .header-div ul li a{
+            font-family: josr;
+            font-size: 1.2rem;
+            letter-spacing: 4px;
+            font-weight: bold;
+            opacity: 0.5;
+            cursor: pointer;
+            transition: all .2s ease-in;
+            text-decoration: none;
+        }
+
+        .header-div ul li:hover a{
+            opacity: 1;
+            text-decoration: underline;
+        }
+    
+    #logo{
+        width: 75px;
+        /* height: 25px; */
+    }
+    
+    main{
+        width: 100%;
+        width: 100%;
+    }
+    main #hero{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+    }
+    
+    main #hero .right, main #hero .left{
+        position: absolute;
+    }
+    
+    main #hero .center{
+        width: 100%;
+        height: calc(100vh - 40px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    main #hero .center .me{
+        width: 360px;
+        height: 360px;
+        border-radius: 50%;
+        box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+        z-index: 200;
+    }
+    
+    main #hero .center .me::before{
+        content: "print()";
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: black;
+        font-weight: bolder;
+        font-size: 1rem;
+        font-family: jos;
+        width: 75px;
+        height: 75px;
+        border-radius: 50%;
+        background-color: var(--color-primary-var);
+        top: 35px;
+        left: -5px;
+        z-index: -1;
+    }
+    
+    main #hero .center .me::after{
+        content: "</>";
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bolder;
+        font-size: 2rem;
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        background-color: var(--color-secondary-var);
+        top: 275px;
+        right: -5px;
+        z-index: -1;
+    }
+    
+    main #hero .center .me h1{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        font-size: clamp(750%, 10rem, 750%);
+        font-weight: bold;
+        letter-spacing: 5px;
+        text-align: center;
+        position: absolute;
+        font-family: tall;
+        white-space: nowrap;
+        opacity: 0.8;
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    }
+    
+    main #hero .center .me h1::before{
+        content: "Hello, i am";
+        width: 100%;
+        display: flex;
+        align-items: end;
+        justify-content: center;
+        position: absolute;
+        top: 30px;
+        font-family: jos;
+        opacity: 0.5;
+        font-size: 1.2rem;
+    }
+
+    main #hero .center .me h1::after{
+        content: "KONDO";
+        width: 100%;
+        display: flex;
+        align-items: end;
+        justify-content: center;
+        position: absolute;
+        bottom: 100px;
+        right: -175px;
+        font-family: josr;
+        opacity: 0.5;
+        font-size: 1.2rem;
+    }
+    
+    .left{
+        top: 50%;
+        left: -25px;
+        transform: translate(-50%, -50%);
+        background-color: var(--color-secondary-var);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        font-size: 1.3rem;
+        color: black;
+        padding-right: 5px;
+        cursor: pointer;
+    }
+    
+    .right{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50px;
+        width: 50px;
+        height: 360px;
+        position: absolute;
+    }
+    
+    .right a{
+        width: 50px;
+        height: 50px;
+        border-radius: 5px;
+        background-color: var(--color-bg-color-var);
+        box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.65rem;
+        text-decoration: none;
+        transition: all .4s ease-in-out;
+        border: 2px solid black;
+        outline: 1px solid white;
+    }
+    
+    .right a:hover{
+        background-color: var(--color-primary-var);
+    }
+
+    .right a:hover i {
+        color: black;
+    }
+
+    .transition{
+        position: absolute;
+        height: 75px;
+        background: linear-gradient(0deg, var(--bg-color-var), var(--bg-trans-color-var));
+        bottom: -50px;
+        left: 0;
+        right: 0;
+    }
+
+    footer{
+        position: fixed;
+        padding: 5px 20px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+    
+    footer div {
+        font-size: 1.2rem;
+        font-family: jos;
+        opacity: 0.8;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    #logo{
+        position: fixed;
+        top: 10px;
+        left: 50%;
+        z-index: 1000;
+        font-size: 1.2rem;
+        display: flex;
+        align-items: end;
+        justify-content: start;
+        transform: translateX(-50%);
+    }
+
+    #logo div{
+        width: 50px;
+        white-space: nowrap;
+    }
+    main{
+        border-radius: 10px;
+    }
+    
+    .screen{
+        position: absolute;
+        width: calc(100%);
+        height: calc(100%);
+        backdrop-filter: blur(200px);
+        z-index: 0;
+        border-radius: 10px;
+    }
+    
+    .light-white{
+        width: 240px;
+        height: 240px;
+        background-color: var(--color-secondary-var);
+        border-radius: 50%;
+        position: absolute;
+        left: 50px;
+        top: 50px;
+        z-index: -50;
+        animation: light-white 12s ease-in 10s infinite;
+    }
+    
+    @keyframes light-white {
+        0%{
+            top: 50px;
+        }
+        25%{
+            top: 100px;
+        }
+        50%{
+            top: 150px;
+        }
+        75%{
+            top: 100px;
+        }
+        100%{
+            top: 50px;
+        }
+    }
+    
+    .light-yellow{
+        width: 240px;
+        height: 240px;
+        background-color: var(--color-primary-var);
+        border-radius: 50%;
+        position: absolute;
+        right: 50px;
+        bottom: 50px;
+        z-index: -50;
+    }
+    
+    header{
+        width: 100%;
+        height: 50px;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+    }
+    
+    .header-div{
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        position: absolute;
+        width: 320px;
+        transform: translateX(-50%);
+        top: 50px;
+        left: 50%;
+        z-index: 1000;
+        }
+    
+        .header-div ul{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            /* padding-right: 20px; */
+            list-style: none;
+            }
+
+            .header-div ul li a{
+                font-family: josr;
+                font-size: 1.1rem;
+                letter-spacing: 2px;
+                font-weight: bold;
+                opacity: 0.5;
+                cursor: pointer;
+                transition: all .2s ease-in;
+                text-decoration: none;
+            }
+    
+            .header-div ul li:hover a{
+                opacity: 1;
+                text-decoration: underline;
+            }
+    
+    #logo{
+        width: 75px;
+        /* height: 25px; */
+    }
+    
+    main{
+        width: 100%;
+        width: 100%;
+    }
+    main #hero{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+    }
+    
+    main #hero .right, main #hero .left{
+        position: absolute;
+    }
+    
+    main #hero .center{
+        width: 100%;
+        height: calc(100vh - 40px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    main #hero .center .me{
+        width: 330px;
+        height: 330px;
+        border-radius: 50%;
+        box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+        z-index: 200;
+    }
+    
+    main #hero .center .me::before{
+        content: "print()";
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: black;
+        font-weight: bolder;
+        font-size: 1rem;
+        font-family: jos;
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+        background-color: var(--color-primary-var);
+        top: 50px;
+        left: -5px;
+        z-index: -1;
+    }
+    
+    main #hero .center .me::after{
+        content: "</>";
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bolder;
+        font-size: 2rem;
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        background-color: var(--color-secondary-var);
+        top: 235px;
+        right: 0px;
+        z-index: -1;
+    }
+    
+    main #hero .center .me h1{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        font-size: 5.5rem;
+        font-weight: bold;
+        letter-spacing: 5px;
+        text-align: center;
+        position: absolute;
+        font-family: tall;
+        white-space: nowrap;
+        opacity: 0.8;
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    }
+    
+    main #hero .center .me h1::before{
+        content: "Hello, i am";
+        width: 100%;
+        display: flex;
+        align-items: end;
+        justify-content: center;
+        position: absolute;
+        top: 30px;
+        font-family: jos;
+        opacity: 0.5;
+        font-size: 1.2rem;
+    }
+
+    main #hero .center .me h1::after{
+        content: "KONDO";
+        width: 100%;
+        display: flex;
+        align-items: end;
+        justify-content: center;
+        position: absolute;
+        bottom: 100px;
+        right: 0px;
+        font-family: josr;
+        opacity: 0.5;
+        font-size: 1.2rem;
+    }
+    
+    .left{
+        top: 50%;
+        left: -25px;
+        transform: translate(-50%, -50%);
+        background-color: var(--color-secondary-var);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        font-size: 1.3rem;
+        color: black;
+        padding-right: 5px;
+        cursor: pointer;
+        z-index: 1000;
+    }
+    
+    .right{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transform: translate(-50%, -50%);
+        bottom: -20px;
+        left: 50%;
+        width: 330px;
+        height: 50px;
+    }
+    
+    .right a{
+        width: 50px;
+        height: 50px;
+        border-radius: 5px;
+        background-color: var(--color-bg-color-var);
+        box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.65rem;
+        text-decoration: none;
+        transition: all .4s ease-in-out;
+    }
+    
+    .right a:hover{
+        background-color: var(--color-secondary-var);
+        color: var(--bg-color-var);
+    }
+
+    footer{
+        position: fixed;
+        padding: 5px 20px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    footer div {
+        font-size: 1rem;
+        font-family: jos;
+        opacity: 0.6;
+    }
+}
